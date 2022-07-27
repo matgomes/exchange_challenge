@@ -1,21 +1,20 @@
 # Exchange
+Elixir solution to a challenge of aggregating results of 3 apis
 
-**TODO: Add description**
+Based on [Zanfranceschi](https://twitter.com/zanfranceschi)'s challenge  
+Original tweet: https://twitter.com/zanfranceschi/status/1548344242010869763  
+Instructions repository: https://github.com/zanfranceschi/desafio-01-cotacoes    
 
-## Installation
+## Running
+Client api:
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `exchange` to your list of dependencies in `mix.exs`:
+	$ docker run --rm -p 8080:80 zanfranceschi/desafio-01-cotacoes
 
-```elixir
-def deps do
-  [
-    {:exchange, "~> 0.1.0"}
-  ]
-end
-```
+Application:
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/exchange>.
+    $ mix run --no-halt
+    $ curl http://localhost:4040/api/exchange-rate/USD
 
+## Testing
+
+    $ mix test
